@@ -1,0 +1,96 @@
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <table class="table">
+
+                <thead class="table-light">
+                    <tr>
+                        <th>Cryptocurrency</th>
+                        <th>Buy Pirce</th>
+                        <th>Sell Price</th>
+                        <th>Last Price</th>
+                        <th>Exchange</th>
+                    </tr>
+                </thead>
+            
+                <tbody>
+                    <tr>
+                        <td class="align-middle">
+                            BTC<!-- <img src="{{ tempProduct.imageUrl }}" height="50" /> -->
+                        </td>
+                        <td class="align-middle">{{ ticker.coinbaseBtcBuy | currency:'USD'}}</td>
+                        <td class="align-middle">{{ ticker.coinbaseBtcSell | currency:'USD'}}</td>
+                        <td class="align-middle">{{ ticker.coinbaseBtcLast | currency:'USD'}}</td>
+                        <td class="align-middle">Coinbase</td>
+                    </tr>
+
+                    <tr>
+                        <td class="align-middle">
+                            BTC<!-- <img src="{{ tempProduct.imageUrl }}" height="50" /> -->
+                        </td>
+                        <td class="align-middle">{{ ticker.bitfinexBtcBuy | currency:'USD'}}</td>
+                        <td class="align-middle">{{ ticker.bitfinexBtcSell | currency:'USD'}}</td>
+                        <td class="align-middle">{{ ticker.bitfinexBtcLast | currency:'USD'}}</td>
+                        <td class="align-middle">Bitfinex</td>
+                    </tr>
+
+                    <tr>
+                        <td class="align-middle">
+                            ETH<!-- <img src="{{ tempProduct.imageUrl }}" height="50" /> -->
+                        </td>
+                        <td class="align-middle">{{ ticker.coinbaseEthBuy | currency:'USD'}}</td>
+                        <td class="align-middle">{{ ticker.coinbaseEthSell | currency:'USD'}}</td>
+                        <td class="align-middle">{{ ticker.coinbaseEthLast | currency:'USD'}}</td>
+                        <td class="align-middle">Coinbase</td>
+                    </tr>
+
+                    <tr>
+                        <td class="align-middle">
+                            ETH<!-- <img src="{{ tempProduct.imageUrl }}" height="50" /> -->
+                        </td>
+                        <td class="align-middle">{{ ticker.bitfinexEthBuy | currency:'USD'}}</td>
+                        <td class="align-middle">{{ ticker.bitfinexEthSell | currency:'USD'}}</td>
+                        <td class="align-middle">{{ ticker.bitfinexEthLast | currency:'USD'}}</td>
+                        <td class="align-middle">Bitfinex</td>
+                    </tr>
+                </tbody>            
+            </table>
+
+            <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Recommendation</th>
+                        <th>Buy BTC</th>
+                        <th>Sell BTC</th>
+                        <th>Buy ETH</th>
+                        <th>Sell ETH</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="align-middle">
+                            ## 
+                        </td>
+                        <td class="align-middle">{{ ticker.recommendBuyBtc }}</td>
+                        <td class="align-middle">{{ ticker.recommendSellBtc }}</td>
+                        <td class="align-middle">{{ ticker.recommendBuyEth }}</td>
+                        <td class="align-middle">{{ ticker.recommendSellEth }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <br>
+            <p class="text-center text-primary">Current Time stamp</p>
+            <br>
+            <p class="text-center">{{ time }}</p>
+            <br>
+        </div>
+
+        <div class="text-center">
+            <button (click)="refresh()" type="button" class="btn btn-success">Refresh</button>
+        </div>
+    </div>
+</div>
